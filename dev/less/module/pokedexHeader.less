@@ -1,0 +1,103 @@
+//pokedex-header
+@import "../theme/index";
+
+.details-header {
+    text-align: center;
+
+
+    .header-pagination {
+
+        & a {
+            background: #a4a4a4;
+            display: block;
+            height: 100px;
+            float: left;
+            width: 50%;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #30a7d7;
+            }
+        }
+
+
+        & .previous {
+            border-right: 4px solid #fff;
+
+            .header-pagination-wrapper {
+                float: left;
+                margin: 15px 10% 0 10%;
+            }
+        }
+
+        & .next {
+            .header-pagination-wrapper {
+                float: right;
+                margin: 15px 10% 0 10%;
+            }
+        }
+
+        .pokemon-number {
+            font-size: 2rem;
+            color: #fff;
+            font-family: @font-stack;
+            font-weight: bold;
+        }
+        .pokemon-name {
+            text-transform: capitalize;
+            color: #616161;
+            margin: 0 0.5em;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+    }
+    .header-pagination-title {
+        float: left;
+        width: 33.3%;
+        margin-left: 33.3%;
+        height: 50px;
+        margin-top: -50px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+
+        &:before {
+            content: " ";
+            height: 52px;
+            width: 75px;
+            display: block;
+            background: transparent url("/images/notch-white-xxl.png") no-repeat 0 1px ;
+            position: absolute;
+            bottom: 0;
+            left: -75px;
+        }
+
+        &:after {
+            content: " ";
+            height: 52px;
+            width: 75px;
+            display: block;
+            background: transparent url("/images/notch-white-xxl.png") no-repeat -75px 1px;
+            position: absolute;
+            bottom: 0;
+            right: -75px;
+        }
+
+        .title-wrapper {
+            padding: 5px;
+            margin: 0 auto;
+            background: #fff;
+            width: 100%;
+            float: left;
+            text-align: center;
+            font-size: 2em;
+            text-transform: capitalize;
+
+            span.pokemon-number {
+                color: #616161;
+                margin-left: 0.5em;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+// pokemon-stats-info
+
+
+.pokemon-stats-info {
+    background-color: #a4a4a4;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 330px;
+
+    .stats-info-title {
+        color: #313131;
+        font-size: 100%;
+        margin: 0.75em 1.5em 1.5em;
+        text-transform: none;
+    }
+    .stats-info-diagram {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        .col {
+            width: 12%;
+        }
+
+        .gauge {
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+
+            li {
+                background: transparent;
+                border-bottom: 0.25em solid #a4a4a4;
+                height: 0.5em;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
+            li.meter {
+                background: #30a7d7;
+                border: none;
+                height: 120%;
+                position: absolute;
+                top: 100%;
+                z-index: 1;
+            }
+        }
+    }
+
+
+
+
+
+
+}
