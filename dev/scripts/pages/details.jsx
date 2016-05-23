@@ -43,9 +43,7 @@ class Details extends React.Component {
     render() {
 
         console.log("Details");
-        console.log(this.state.currentPokemon);
-        console.log(this.state.pokemons);
-
+        
         return (
             <div className="details">
                 {"Details pokemonId:" + this.props.params.pokemonId}

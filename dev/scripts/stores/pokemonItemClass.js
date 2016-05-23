@@ -2,12 +2,13 @@
 // нужен для добавленея методов и необходимых свойств
 
 export default class PokemonItem {
+
     constructor({name, url, id, ...arg}) {
         let maxNum = 710;
         this.name = name;
         this.url = url;
         this.params = arg;
-        this.id = id ? id : this.addId();
+        this.id = id ? id : this.addId(); // id type is number
         this.imgSrc = this.addImgSrc();
         this.nextId = (parseInt(this.id,10) + 1) > maxNum ? 1 : parseInt(this.id,10) + 1;
         this.prevId = (parseInt(this.id,10) - 1) < 1 ? maxNum : parseInt(this.id,10) - 1;
@@ -18,7 +19,7 @@ export default class PokemonItem {
         let arr = this.url.split('/');
         let arrLength = arr.length;
         id  = arr[arrLength-2];
-        return id;
+        return parseInt(id,10);
     }
 
     addImgSrc() {
@@ -39,16 +40,6 @@ export default class PokemonItem {
         }
     }
 
-    //getData(id) {
-    //    let url = 'http://pokeapi.co/api/v2/pokemon/';
-    //
-    //    console.log('request Url : ' + url+ id);
-    //    return fetch(url + id)
-    //        .then(function(Response){
-    //            //console.log('res :  ',Response);
-    //            return Response.json();
-    //        })
-    //}
 }
 
 

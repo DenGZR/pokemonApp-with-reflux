@@ -2,7 +2,6 @@
 
 let service = {
     getPokemonData(url) {
-
         console.log('request Url : ' + url);
         return fetch(url)
             .then(function(Response){
