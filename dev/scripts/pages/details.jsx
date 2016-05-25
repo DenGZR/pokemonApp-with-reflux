@@ -46,8 +46,6 @@ class Details extends React.Component {
         
         return (
             <div className="details">
-                {"Details pokemonId:" + this.props.params.pokemonId}
-
                 <DetailsPageLayout
                     currentPokemon={this.state.currentPokemon}
                     pokemons={this.state.pokemons}

@@ -19,10 +19,23 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+.container {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container .row {
+  margin-right: 0;
+  margin-left: 0;
+}
 #app {
-  height: 100%;
-  background: #f8f8ff;
-  margin: 0 auto;
+  position: relative;
+  color: #919191;
+  background: transparent url("../images/container_bg.png") left top;
+}
+#app .container {
+  background: #fff;
 }
 .pokemon-stats-info {
   background-color: #a4a4a4;
@@ -160,4 +173,35 @@ a:focus {
 .details-header .header-pagination-title .title-wrapper span.pokemon-number {
   color: #616161;
   margin-left: 0.5em;
+}
+.pokemon-header {
+  background: #fff;
+}
+.pokemon-header .section-title {
+  padding: 15px 10px 20px 10px;
+}
+.pokedex-search {
+  background: #313131;
+}
+.pokedex-search .pokedex-main-search {
+  padding: 20px;
+  color: #fff;
+}
+.pokedex-search .pokedex-main-search .main-title {
+  font-family: Flexo-Regular, arial, sans-serif;
+  font-size: 22.4px;
+}
+.pokedex-search .pokedex-main-search .form-control {
+  display: inline-block;
+  width: 75%;
+}
+.pokedex-search .pokedex-main-search .form-control-feedback {
+  right: 25%;
+}
+.pokedex-search .pokedex-main-search .search-submit {
+  background-image: url("/images/input-search-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
 }

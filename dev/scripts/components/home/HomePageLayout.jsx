@@ -23,18 +23,20 @@ class DetailsPageLayout extends React.Component {
         //console.log(this.props);
         return (
             <div className="home-content">
-                <Row className="home-header">
-                    <Col xs={12} md={12}>
-                        <Header/>
-                        <Search/>
-                        <SearchAdvanced/>
+                <Row>
+                    <Col xs={12}>
+                        <div className="home-header">
+                            <Header/>
+                            <Search {...this.props}/>
+                            <SearchAdvanced/>
+                        </div>
                     </Col>
                 </Row>
                 <Row>
                     <Loader loaded={this.props.loaded}>
                         <PokemonList {...this.props}/>
                     </Loader>
-                    <button type="button" className="btn btn-danger" onClick={this.props.onLoadList} > next </button>
+                    <button type="button" className="btn btn-danger" onClick={this.props.onLoadNextList} >Load more Pokemon</button>
                 </Row>
             </div>
         )

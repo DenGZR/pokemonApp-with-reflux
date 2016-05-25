@@ -28,8 +28,15 @@ class Home extends React.Component {
     //    console.log("pokemon : " + data);
     this.setState({pokemon: data, loaded: true});
   }
+  onSearch(id) {
 
-  onLoadList() {
+      if(id) {
+          PokemonActions.loadPokemonId(id);
+          //details/2
+      }
+  }
+
+  onLoadNextList() {
     this.setState({ loaded: false});
     PokemonActions.loadPokemonList();
   }
@@ -40,7 +47,8 @@ class Home extends React.Component {
             <HomePageLayout
                 pokemon={this.state.pokemon}
                 loaded={this.state.loaded}
-                loadList={this.onLoadList}
+                loadNextList={this.onLoadList}
+                onSearch={this.onSearch}
             />
         </div>
     )

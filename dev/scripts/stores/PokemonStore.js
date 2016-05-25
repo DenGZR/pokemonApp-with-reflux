@@ -16,7 +16,7 @@ let PokemonListStore = Reflux.createStore({
     //Actions metods start
     loadPokemonId(id) {
         let current;
-        id = parseInt(id,10);
+        id = parseInt(id,10) ? parseInt(id,10) : id;
         let url = [];
         let nextId;
         let prevId;
@@ -109,24 +109,38 @@ let PokemonListStore = Reflux.createStore({
         let url = limit ? (this.url.base + urlLimit) : this.url.next;
         console.log('URL : ' + url);
         HTTP.getPokemonData(url)
-            .then(function(json) {
+            .then((json) => {
                 json.results.forEach((resultItem) => {
                     let pokemonItem = new PokemonItem(resultItem);
                     this.pokemon[pokemonItem.id] = pokemonItem;
                 });
                 this.url.next = json.next;
                 this.trigger('changeList', this.pokemon);
-            }.bind(this))
+            })
     },
 
-    loadPokemonDetails(pokemonName) {
-        HTTP.getPokemonData(this.url.base + pokemonName)
-            .then(function(json) {
-                let pokemonItem = new PokemonItem(json);
-                this.pokemon[pokemonItem.id] = pokemonItem;
-                console.log("PokemonDetails json: " + this.pokemon[pokemonItem.id]);
-                this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
-            }.bind(this));
+    loadPokemonByName(pokemonName) {
+        return (
+            HTTP.getPokemonData(this.url.base + pokemonName)
+                .then((json) => {
+                    let pokemonItem = new PokemonItem(json);
+                    this.pokemon[pokemonItem.id] = pokemonItem;
+                    console.log("PokemonDetails json: " + this.pokemon[pokemonItem.id]);
+                    this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
+                })
+        )
+    },
+
+    loadPokemonById(pokemonName) {
+        return (
+            HTTP.getPokemonData(this.url.base + pokemonName)
+                .then((json) => {
+                    let pokemonItem = new PokemonItem(json);
+                    this.pokemon[pokemonItem.id] = pokemonItem;
+                    console.log("PokemonDetails json: " + this.pokemon[pokemonItem.id]);
+                    this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
+                })
+        )
     }
      // Actions metods end
 });

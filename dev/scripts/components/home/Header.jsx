@@ -4,7 +4,7 @@ const Header = (props) => {
   return (
 
       <header className="pokemon-header">
-          <h1 className="section-title">Pokédex header</h1>
+          <h1 className="section-title">Pokédex</h1>
       </header>
   )
 };
