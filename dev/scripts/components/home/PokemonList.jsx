@@ -4,12 +4,14 @@ import PokemonListItem from './PokemonListItem.jsx';
 
 const PokemonList = ({pokemon}) => {
     console.log("PokemonList");
- 
+
     let listItems = [];
 
-    for(let id in pokemon ){
-        let item = <PokemonListItem data={pokemon[id]} key={id}/>;
-        listItems.push(item);
+    for (let id in pokemon) {
+        if( id !== "next" && id !== "prev" ) {
+            let item = <PokemonListItem data={pokemon[id]} key={id}/>;
+            listItems.push(item);
+        }
     }
 
     return (
@@ -17,6 +19,6 @@ const PokemonList = ({pokemon}) => {
             {listItems}
         </Row>
     )
-}
+};
 
 export default PokemonList;

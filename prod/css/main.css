@@ -32,10 +32,95 @@ a:focus {
 #app {
   position: relative;
   color: #919191;
+  height: 100%;
   background: transparent url("../images/container_bg.png") left top;
 }
 #app .container {
   background: #fff;
+  height: 100%;
+}
+.pokemon-header {
+  background: #fff;
+}
+.pokemon-header .section-title {
+  padding: 15px 10px 20px 10px;
+}
+.pokedex-search {
+  background: #313131;
+}
+.pokedex-search .pokedex-main-search {
+  padding: 20px;
+  color: #fff;
+}
+.pokedex-search .pokedex-main-search .main-title {
+  font-family: Flexo-Regular, arial, sans-serif;
+  font-size: 22.4px;
+}
+.pokedex-search .pokedex-main-search .form-control {
+  display: inline-block;
+  width: 75%;
+}
+.pokedex-search .pokedex-main-search .form-control-feedback {
+  right: 25%;
+}
+.pokedex-search .pokedex-main-search .search-submit {
+  background-image: url("/images/input-search-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+}
+.pokemon-item .pokemon-item-img {
+  background: #F2F2F2;
+  border-radius: 5px;
+}
+.pokemon-item .pokemon-item-img .pokemon-item-foto {
+  margin: 0 auto;
+  display: block;
+}
+.pokemon-item .pokemon-item-img .pokemon-item-id {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.pokemon-item .pokemon-item-img .number-prefix {
+  color: #919191;
+  width: 70%;
+  height: 42px;
+  display: inline-block;
+  background-image: url("/images/notch-collectibles.png");
+  background-position: top;
+  line-height: 38px;
+  background-repeat: no-repeat;
+}
+.pokemon-item .pokemon-item-info h5 {
+  text-transform: capitalize;
+  color: #313131;
+  font-size: 22.4px;
+  margin-bottom: 5px;
+}
+.pokemon-item .pokemon-item-info button {
+  max-width: 110px;
+  width: 40%;
+}
+.pokemon-item .pokemon-item-info .grass {
+  background: -webkit-linear-gradient(top, #9bcc50 50%, #9bcc50 50%);
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background-color: #9bcc50;
+  color: #212121;
+}
+.pokemon-item .pokemon-item-info .poison {
+  background: -webkit-linear-gradient(top, #b97fc9 50%, #b97fc9 50%);
+  background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+  background-color: #b97fc9;
+  color: #fff;
+}
+.home-content .loadedContent {
+  margin: 25px 0;
+}
+.home-content .load-next-list {
+  display: block;
+  margin: 0 auto;
 }
 .pokemon-stats-info {
   background-color: #a4a4a4;
@@ -69,6 +154,9 @@ a:focus {
 }
 .pokemon-stats-info .stats-info-diagram .col {
   width: 12%;
+}
+.pokemon-stats-info .stats-info-diagram .col span {
+  color: #212121;
 }
 .pokemon-stats-info .stats-info-diagram .gauge {
   background: #fff;
@@ -111,11 +199,31 @@ a:focus {
 }
 .details-header .header-pagination .previous .header-pagination-wrapper {
   float: left;
-  margin: 15px 10% 0 10%;
+  margin: 15px 10% 0 2%;
+}
+.details-header .header-pagination .previous .glyphicon {
+  float: left;
+  color: #fff;
+  font-size: 22px;
+  line-height: 35px;
+  margin: 0 5px;
+}
+.details-header .header-pagination .previous .pokemon-number {
+  float: left;
 }
 .details-header .header-pagination .next .header-pagination-wrapper {
   float: right;
-  margin: 15px 10% 0 10%;
+  margin: 15px 2% 0 10%;
+}
+.details-header .header-pagination .next .glyphicon {
+  float: right;
+  color: #fff;
+  font-size: 22px;
+  line-height: 35px;
+  margin: 0 5px;
+}
+.details-header .header-pagination .next .pokemon-number {
+  float: right;
 }
 .details-header .header-pagination .pokemon-number {
   font-size: 2rem;
@@ -174,34 +282,93 @@ a:focus {
   color: #616161;
   margin-left: 0.5em;
 }
-.pokemon-header {
-  background: #fff;
+.pokemon-ability-info {
+  padding: 20px 5px;
+  background-color: #30a7d7;
+  color: #fff;
+  border-radius: 10px;
+  margin: 25px 0;
 }
-.pokemon-header .section-title {
-  padding: 15px 10px 20px 10px;
+.pokemon-ability-info .attribute-title {
+  font-size: 22.4px;
+  margin-left: 10px;
 }
-.pokedex-search {
-  background: #313131;
+.pokemon-ability-info .attribute-value {
+  margin-left: 20px;
+  font-family: Flexo-Regular, arial, sans-serif;
+  color: #212121;
+  font-size: 18.2px;
+  white-space: normal;
+  word-break: break-word;
 }
-.pokedex-search .pokedex-main-search {
-  padding: 20px;
+.pokemon-ability-info .gender {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+}
+.pokemon-ability-info .gender-male {
+  background-image: url("../images/male.png");
+}
+.pokemon-ability-info .gender-female {
+  background-image: url("../images/female.png");
+}
+.pokemon-attributes h3 {
+  font-family: Flexo-Regular, arial, sans-serif;
+  color: #212121;
+  margin-top: 25px;
+  text-transform: none;
+}
+.pokemon-attributes li {
+  display: inline-block;
+  width: 30%;
+  border-radius: 5px;
+  margin: 10px 5px 0 0;
+  padding: 0;
+  text-align: center;
+}
+.pokemon-attributes li a {
+  font-family: Flexo-Regular, arial, sans-serif;
+  color: white;
+  display: block;
+  line-height: 100%;
+  padding: 10px 0;
+  width: 100%;
+}
+.pokemon-attributes .background-color-grass {
+  background: -webkit-linear-gradient(top, #fd7d24 50%, #fd7d24 50%);
+  background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+  background-color: #fd7d24;
   color: #fff;
 }
-.pokedex-search .pokedex-main-search .main-title {
-  font-family: Flexo-Regular, arial, sans-serif;
-  font-size: 22.4px;
+.pokemon-attributes .background-color-poison {
+  background: -webkit-linear-gradient(top, #b97fc9 50%, #b97fc9 50%);
+  background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+  background-color: #b97fc9;
+  color: #fff;
 }
-.pokedex-search .pokedex-main-search .form-control {
-  display: inline-block;
-  width: 75%;
+.pokemon-attributes .background-color-fire {
+  background: -webkit-linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+  background: -webkit-linear-gradient(top, #fd7d24 50%, #fd7d24 50%);
+  background: linear-gradient(180deg, #fd7d24 50%, #fd7d24 50%);
+  background-color: #fd7d24;
+  color: #fff;
 }
-.pokedex-search .pokedex-main-search .form-control-feedback {
-  right: 25%;
+.pokemon-attributes .background-color-flying {
+  background: -webkit-linear-gradient(top, #3dc7ef 50%, #bdb9b8 50%);
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+  color: #212121;
 }
-.pokedex-search .pokedex-main-search .search-submit {
-  background-image: url("/images/input-search-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 32px;
-  height: 32px;
+.pokemon-attributes .background-color-ice {
+  background: -webkit-linear-gradient(top, #51c4e7 50%, #51c4e7 50%);
+  background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background-color: #51c4e7;
+  color: #212121;
+}
+.pokemon-attributes .background-color-psychic {
+  background: -webkit-linear-gradient(top, #f366b9 50%, #f366b9 50%);
+  background: linear-gradient(180deg, #f366b9 50%, #f366b9 50%);
+  background-color: #f366b9;
+  color: #fff;
 }

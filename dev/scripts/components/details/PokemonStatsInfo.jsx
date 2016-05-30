@@ -5,7 +5,7 @@ const PokemonStatsInfo = ({stats}) => {
 
     stats = stats ? stats : [];
     console.log("PokemonStatsInfo");
-    console.log(stats);
+
     return (
         <div className="pokemon-stats-info">
             <h3 className="stats-info-title">Stats</h3>

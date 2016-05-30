@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import lodash from 'lodash';
 import DetailsPageLayout from '../components/details/DetailsPageLayout.jsx';
 import PokemonStore from '../stores/PokemonStore';
@@ -19,7 +19,7 @@ class Details extends React.Component {
         let pokemonId = nextProps.params.pokemonId;
 
         if( pokemonId !== this.state.currentPokemon.id ) {
-            PokemonActions.loadPokemonId( pokemonId );
+            PokemonActions.loadPokemon( pokemonId );
             return this.setState({ currentPokemon: {}, loaded: false});
         }
     }
@@ -27,7 +27,7 @@ class Details extends React.Component {
    componentWillMount() {
         this.setState({ loaded: false});
         this.unsubscribe = PokemonStore.listen(this.onLoad.bind(this));
-        PokemonActions.loadPokemonId(this.props.params.pokemonId);
+        PokemonActions.loadPokemon(this.props.params.pokemonId);
    }
 
     componentWillUnmount() {
@@ -37,6 +37,10 @@ class Details extends React.Component {
     onLoad(event, allPokemons, current) {
         if( current  ) {
             this.setState({currentPokemon: current, pokemons: allPokemons, loaded: true});
+        } else {
+            let path = `/notFound`;
+            this.context.router.push(path);
+            console.log("Pokemon not Found !!!" );
         }
     }
 
@@ -55,5 +59,10 @@ class Details extends React.Component {
         )
     }
 }
+
+Details.contextTypes = {
+    router: PropTypes.object.isRequired
+};
+
 
 export default Details;

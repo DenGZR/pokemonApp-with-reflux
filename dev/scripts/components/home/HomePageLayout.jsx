@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Button} from 'react-bootstrap';
 import Loader from 'react-loader';
 
 import Header from './Header.jsx';
@@ -20,7 +20,7 @@ class DetailsPageLayout extends React.Component {
 
     render() {
         console.log("HomePageLayout");
-        //console.log(this.props);
+
         return (
             <div className="home-content">
                 <Row>
@@ -28,19 +28,19 @@ class DetailsPageLayout extends React.Component {
                         <div className="home-header">
                             <Header/>
                             <Search {...this.props}/>
-                            <SearchAdvanced/>
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Loader loaded={this.props.loaded}>
                         <PokemonList {...this.props}/>
+                        <Button className="load-next-list" bsStyle="danger" bsSize="large"
+                                onClick={this.props.nextList}>Load more Pokemon</Button>
                     </Loader>
-                    <button type="button" className="btn btn-danger" onClick={this.props.onLoadNextList} >Load more Pokemon</button>
                 </Row>
             </div>
         )
     }
-};
+}
 
 export default DetailsPageLayout;

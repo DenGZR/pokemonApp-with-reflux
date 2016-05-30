@@ -5,7 +5,8 @@ import Header from './Header.jsx';
 import PokemonFigure from './PokemonFigure.jsx';
 import PokemonStatsInfo from './PokemonStatsInfo.jsx';
 import PokemonDescriptions from './PokemonDescriptions.jsx';
-import PokemonCollectiblesDetail from './PokemonCollectiblesDetail.jsx';
+import PokemonAbilityInfo from './PokemonAbilityInfo.jsx';
+import PokemonAttributes from './PokemonAttributes.jsx';
 
 export default class DetailsPageLayout extends React.Component {
 
@@ -33,13 +34,14 @@ export default class DetailsPageLayout extends React.Component {
                 </Row>
                 <Loader loaded={this.props.loaded}>
                     <Row className="details-info">
-                        <Col xs={6} md={6}>
+                        <Col xs={12} sm={6} md={6}>
                             <PokemonFigure {...this.props.currentPokemon}/>
                             <PokemonStatsInfo {...this.props.currentPokemon.params}/>
                         </Col>
-                        <Col xs={6} md={6}>
+                        <Col xs={12} sm={6} md={6}>
                             <PokemonDescriptions/>
-                            <PokemonCollectiblesDetail {...this.props.currentPokemon}/>
+                            <PokemonAbilityInfo {...this.props.currentPokemon}/>
+                            <PokemonAttributes />
                         </Col>
                     </Row>
                 </Loader>

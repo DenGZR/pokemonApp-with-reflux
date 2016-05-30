@@ -14,102 +14,39 @@ let PokemonListStore = Reflux.createStore({
         }
     },
     //Actions metods start
-    loadPokemonId(id) {
-        let current;
-        id = parseInt(id,10) ? parseInt(id,10) : id;
-        let url = [];
-        let nextId;
-        let prevId;
+    loadPokemon(name) {
+        let currentId;
 
-        // паралельная асинхроная загрузка 3 id с проверкой наличия
-        if( id in this.pokemon) {
-            nextId = this.pokemon[id].nextId;
-            prevId =  this.pokemon[id].prevId;
-
-            if(!('stats' in this.pokemon[id].params)) {
-                url.push(this.url.base + id);
-            }
-            if(!this.pokemon[nextId]) {
-                url.push(this.url.base + nextId);
-            } else {
-                this.pokemon.next = this.pokemon[nextId];
-            }
-            if(!this.pokemon[prevId]) {
-                url.push(this.url.base + prevId);
-            } else {
-                this.pokemon.prev = this.pokemon[prevId];
-            }
-        } else {
-            nextId =  id + 1;
-            prevId =  id - 1;
-            url.push(this.url.base + id);
-            url.push(this.url.base + nextId);
-            url.push(this.url.base + prevId);
-        }
-
-        if( url.length > 0 ) {
-            Promise.all( url.map( HTTP.getPokemonData ) )
-                .then(results => {
-                    console.log(results);
-                    results.forEach((resultItem) => {
-                        let pokemonItem = new PokemonItem(resultItem);
-                        //debugger;
-                        this.pokemon[pokemonItem.id] = pokemonItem;
-                        if( pokemonItem.id === nextId ) {
-                            this.pokemon.next = pokemonItem;
-                        }
-                        if( pokemonItem.id === prevId ) {
-                            this.pokemon.prev = pokemonItem;
-                        }
-                    });
-                    console.log('well done!!!')
-                    this.trigger('changeDetails', this.pokemon, this.pokemon[id]);
-                });
-        } else {
-            this.trigger('changeDetails', this.pokemon, this.pokemon[id]);
-        }
-        // последовательная асинхроная загрузка 3 id без проверки наличия
-        //HTTP.getPokemonData(this.url.base + id)
-        //    .then( json => {
-        //        console.log("Res current: ");
-        //        return current = new PokemonItem(json);
-        //    })
-        //    .then(current => {
-        //        let nextId = current.nextId;
-        //        return HTTP.getPokemonData(this.url.base + nextId)
-        //    })
-        //    .then( json => {
-        //        console.log("Res next: ");
-        //        return next = new PokemonItem(json);
-        //    })
-        //    .then( next => {
-        //        let prevId = current.prevId;
-        //        return HTTP.getPokemonData(this.url.base + prevId)
-        //    })
-        //    .then( json => {
-        //        console.log("Res prev ");
-        //        return prev = new PokemonItem(json);
-        //    })
-        //    .then( prev => {
-        //        if(current&&next&&prev) {
-        //            this.pokemon.next = next;
-        //            this.pokemon.prev = prev;
-        //            this.pokemon[id] = current;
-        //            this.trigger('changeDetails', this.pokemon, this.pokemon[id]);
-        //            console.log('All cool done')
-        //        }
-        //    })
-        //    .catch( err => {
-        //        console.log('Error :' + err)
-        //    });
+        this._loadPokemonByName(name)
+            .then((current) => {
+                if(!current) {
+                    throw Error("Error data load!!!");
+                }
+                currentId = current.id;
+                return this._loadPokemonPrevNext(current)
+            })
+            .then((obj) => {
+                console.log('well done!!!' + obj);
+                this.trigger('changeDetails', this.pokemon, this.pokemon[currentId]);
+            })
+            .catch((err) => {
+                console.log('Error data load!!!')
+                return this.trigger('changeList', null);
+            });
     },
 
-    loadPokemonList(limit,offset) {
-        let urlLimit = '?limit=' + limit + '&offset=' + offset;
-        let url = limit ? (this.url.base + urlLimit) : this.url.next;
+    loadPokemonList(toNext) {
+        // if pokemon is empty trigger Actions loadPokemonList
+        if(!toNext && !this._isEmptyObject(this.pokemon)) {
+            return this.trigger('changeList', this.pokemon);
+        }
+        let url = this.url.next;
         console.log('URL : ' + url);
         HTTP.getPokemonData(url)
             .then((json) => {
+                if(!json) {
+                    return this.trigger('changeList', null);
+                }
                 json.results.forEach((resultItem) => {
                     let pokemonItem = new PokemonItem(resultItem);
                     this.pokemon[pokemonItem.id] = pokemonItem;
@@ -117,32 +54,70 @@ let PokemonListStore = Reflux.createStore({
                 this.url.next = json.next;
                 this.trigger('changeList', this.pokemon);
             })
+
     },
 
-    loadPokemonByName(pokemonName) {
+
+    // Actions metods end
+
+    _loadPokemonByName(pokemonName) {
         return (
             HTTP.getPokemonData(this.url.base + pokemonName)
                 .then((json) => {
+                    if(!json) {
+                        return null;
+                    }
                     let pokemonItem = new PokemonItem(json);
-                    this.pokemon[pokemonItem.id] = pokemonItem;
-                    console.log("PokemonDetails json: " + this.pokemon[pokemonItem.id]);
-                    this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
+                    return this.pokemon[pokemonItem.id] = pokemonItem;
+                    console.log("loadPokemonByName : " + pokemonName);
+                    //this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
                 })
         )
     },
 
-    loadPokemonById(pokemonName) {
-        return (
-            HTTP.getPokemonData(this.url.base + pokemonName)
-                .then((json) => {
-                    let pokemonItem = new PokemonItem(json);
-                    this.pokemon[pokemonItem.id] = pokemonItem;
-                    console.log("PokemonDetails json: " + this.pokemon[pokemonItem.id]);
-                    this.trigger('changeDetails', this.pokemon, this.pokemon[pokemonItem.id]);
-                })
-        )
+    _loadPokemonPrevNext(pokemon) {
+        let nextId;
+        let prevId;
+        let currentId;
+        let url = [];
+
+        currentId = pokemon.id;
+        nextId = pokemon.nextId;
+        prevId = pokemon.prevId;
+
+        if(this.pokemon[nextId] && this.pokemon[prevId] ) {
+            this.pokemon.next = this.pokemon[nextId];
+            this.pokemon.prev = this.pokemon[prevId];
+            return this.pokemon;
+        } else {
+            url.push(this.url.base + nextId);
+            url.push(this.url.base + prevId);
+
+            return (
+                Promise.all( url.map( HTTP.getPokemonData ) )
+                    .then(results => {
+                        console.log(results);
+                        results.forEach((resultItem) => {
+                            let pokemonItem = new PokemonItem(resultItem);
+                            //debugger;
+                            this.pokemon[pokemonItem.id] = pokemonItem;
+                            if( pokemonItem.id === nextId ) {
+                                this.pokemon.next = pokemonItem;
+                            }
+                            if( pokemonItem.id === prevId ) {
+                                this.pokemon.prev = pokemonItem;
+                            }
+                            return  this.pokemon;
+                        });
+                    })
+            )
+        }
+    },
+
+    _isEmptyObject(emptyObject){
+        return JSON.stringify(emptyObject) === '{}';
     }
-     // Actions metods end
+
 });
 
 export default PokemonListStore;
