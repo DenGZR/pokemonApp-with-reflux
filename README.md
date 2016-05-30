@@ -29,9 +29,9 @@ $ gulp
 
 ### PrintScreen
 
-<img src="https://github.com/DenGZR/pokemonApp-with-reflux/blob/new_branch_stote/readme_img/home-page.png" width=400 />  
+<img src="https://github.com/DenGZR/pokemonApp-with-reflux/blob/new_branch_stote/readme_img/home-page.png" width=600 />  
  
 
-<img src="https://github.com/DenGZR/pokemonApp-with-reflux/blob/new_branch_stote/readme_img/details-page.png" width=400 />
+<img src="https://github.com/DenGZR/pokemonApp-with-reflux/blob/new_branch_stote/readme_img/details-page.png" width=600 />
 
    
