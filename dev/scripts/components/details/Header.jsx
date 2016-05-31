@@ -12,24 +12,22 @@ const Header = ({current,pokemons}) => {
     current = current || defSet;
 
     console.log("Header");
-    console.log(current);
-    console.log(pokemons);
 
     return (
-        <header className="">
+        <header >
             <div className="header-pagination clearfix">
                 <Link to={`/details/${prev.id}`} className="previous">
                     <div className="header-pagination-wrapper">
-                        <span className="icon icon_arrow_sm_left"></span>
+                        <span className="glyphicon glyphicon-circle-arrow-left"></span>
                         <span className="pokemon-number">{'#' + prev.id}</span>
-                        <span className="pokemon-name">{prev.name}</span>
+                        <span className="pokemon-name hidden-xs">{prev.name}</span>
                     </div>
                 </Link>
                 <Link to={`/details/${next.id}`} className="next">
                     <div className="header-pagination-wrapper">
-                        <span className="icon icon_arrow_sm_right"></span>
+                        <span className="glyphicon glyphicon-circle-arrow-right"></span>
                         <span className="pokemon-number">{'#' + next.id}</span>
-                        <span className="pokemon-name">{next.name}</span>
+                        <span className="pokemon-name hidden-xs">{next.name}</span>
                     </div>
                 </Link>
             </div>

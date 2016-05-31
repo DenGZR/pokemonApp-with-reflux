@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/username/repository.git"
+    "url": "https://github.com/DenGZR/pokemonApp-with-reflux"
   },
   "devDependencies": {
     "babel-core": "^6.1.2",
@@ -51,7 +51,7 @@
     "react-bootstrap": "^0.29.0",
     "react-dom": "^0.14.2",
     "react-loader": "^2.4.0",
-    "react-router": "^1.0.0",
+    "react-router": "^2.4.1",
     "reflux": "^0.3.0"
   },
   "jest": {

@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 const PokemonDescriptions = (stats)=> {
     console.log("PokemonDescriptions");
-    console.log(stats);
     return (
         <div className="pokemon-descriptions">
             <h3>Descriptions</h3>

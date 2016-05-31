@@ -1,0 +1,61 @@
+@import "../theme/index";
+
+.pokemon-item {
+
+  .pokemon-item-img {
+    background: @pokemon-item-bg;
+    border-radius: 5px;
+
+    .pokemon-item-foto {
+      margin: 0 auto;
+      display: block;
+    }
+
+    .pokemon-item-id {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .number-prefix {
+      color: @color-text;
+      width: 70%;
+      height: 42px;
+      display: inline-block;
+      background-image: url("/images/notch-collectibles.png");
+      background-position: top;
+      line-height: 38px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .pokemon-item-info {
+    h5 {
+      text-transform: capitalize;
+      color: #313131;
+      font-size: @font-size-big;
+      margin-bottom: 5px;
+    }
+
+    button {
+      max-width: 110px;
+      width: 40%;
+    }
+
+    .grass {
+      background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+      background-color: #9bcc50;
+      color: #212121;
+    }
+
+    .poison {
+      background: linear-gradient(180deg, #b97fc9 50%, #b97fc9 50%);
+      background-color: #b97fc9;
+      color: #fff;
+    }
+  }
+
+  //background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  //background-color: #9bcc50;
+  //color: #212121;
+}
