@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34572ed8-d4ed-448e-a6b0-a46400d8b16e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prod/css/main.css" afterPath="$PROJECT_DIR$/prod/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prod/js/main.js" afterPath="$PROJECT_DIR$/prod/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pokemon app.iws" />
@@ -26,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.23466666">
               <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
               <folding />
             </state>
@@ -46,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pokemonItemClass.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pokemonItemClass.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/scripts/stores/pokemonItemClass.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -64,21 +61,53 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/scripts/actions/pokemonActions.js" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/pokemonStore.js" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/pokemonDetailsStore.js" />
-        <option value="$PROJECT_DIR$/dev/scripts/components/home/PokemonList.jsx" />
-        <option value="$PROJECT_DIR$/dev/scripts/components/home/PokemonListItem.jsx" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/pokemonItem.js" />
-        <option value="$PROJECT_DIR$/dev/scripts/components/details/DetailsPageLayout.jsx" />
-        <option value="$PROJECT_DIR$/dev/scripts/pages/home.jsx" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/PokemonListStore.js" />
-        <option value="$PROJECT_DIR$/dev/scripts/services/httpservice.js" />
-        <option value="$PROJECT_DIR$/dev/scripts/components/details/Header.jsx" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/pokemonItemClass.js" />
+        <option value="$PROJECT_DIR$/dev/less/layout/grid.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/actions/pokemonActions.js" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonDescriptions.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonFigure.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonStatsInfo.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/StatsItem.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/PokemonListItem.less" />
+        <option value="$PROJECT_DIR$/dev/less/module/homeSearch.less" />
+        <option value="$PROJECT_DIR$/dev/less/module/pokemonListItem.less" />
+        <option value="$PROJECT_DIR$/dev/less/module/index.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/Header.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/Search.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/SearchAdvanced.jsx" />
+        <option value="$PROJECT_DIR$/dev/index.html" />
+        <option value="$PROJECT_DIR$/dev/less/module/home.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/PokemonListItem.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/homeHeader.less" />
+        <option value="$PROJECT_DIR$/dev/less/theme/index.less" />
+        <option value="$PROJECT_DIR$/dev/less/module/detailsHeader.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/routes.js" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonCollectiblesDetail.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonAbilityInfo.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/detailsAbilityInfo.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/DetailsPageLayout.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/PokemonAttributes.less" />
+        <option value="$PROJECT_DIR$/dev/less/module/details.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/PokemonAttributes.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/detailsAttributes.less" />
+        <option value="$PROJECT_DIR$/dev/less/layout/index.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/details/Header.jsx" />
+        <option value="$PROJECT_DIR$/dev/less/module/detailsStats.less" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/PokemonList.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/PokemonNotFound.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/pages/notFound.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/components/home/HomePageLayout.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/pages/home.jsx" />
         <option value="$PROJECT_DIR$/dev/scripts/stores/PokemonStore.js" />
         <option value="$PROJECT_DIR$/dev/scripts/pages/details.jsx" />
+        <option value="$PROJECT_DIR$/dev/scripts/services/httpservice.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -180,82 +209,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pokemon app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -336,7 +289,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34201956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3425775" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -387,7 +340,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -681,14 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -701,6 +646,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23466666">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
