@@ -1,5 +1,4 @@
 node_modules
 prod
-*.log
 .idea
-**/.idea/workspace.xml **/.idea/tasks.xml
+*.log
