@@ -1,6 +1,5 @@
 node_modules
-dist
-app/bower_components
-app/bundles
-*.log
+prod
+.idea/
 **/.idea/workspace.xml **/.idea/tasks.xml
+*.log
